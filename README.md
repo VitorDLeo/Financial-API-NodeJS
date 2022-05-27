@@ -1,6 +1,6 @@
 # Financial-API-NodeJS
 
-## requirements
+### requirements
 
 # [] It must be possible to create an account
 # [] It should be possible to fetch the customer's bank statement
@@ -11,7 +11,7 @@
 # [] It must be possible to get customer account data
 # [ ] It must be possible to delete an account
 
-## Business rules
+### Business rules
 
 # [] It should not be possible to register an account with an existing CPF
 # [] It should not be possible to deposit to a non-existing account
