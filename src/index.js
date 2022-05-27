@@ -45,15 +45,22 @@ app.post("/account", (request, response) => {
 
 
 // Search Account
-app.get("/statement/:cpf", (resquest, response) => {
+app.get("/statement", (request, response) => {
 
-    const { cpf } = resquest.params;
+    const { cpf } = request.headers;
 
     const customer = customers.find(customer => customer.cpf === cpf); // Verification CPF account
+
+    if(!customer){
+        return response.status(400).json({ error: "Customer not found"})
+    }
 
     return response.json(customer.statement);
 
 });
+
+
+
 
 
 
