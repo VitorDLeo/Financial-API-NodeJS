@@ -16,7 +16,7 @@
 <br>
 <hr>
 
-## Business rules
+## Business Rules
 
 <br>
 
