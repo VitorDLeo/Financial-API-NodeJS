@@ -58,6 +58,7 @@ function getBalance(statement){
 
 
 // Creation account
+// Post method for creating the Customer
 app.post("/account", (request, response) => {
     
     const { cpf, name } = request.body;
@@ -153,7 +154,7 @@ app.get("/statement/date", verifyIfExistsAccountCPF, (request, response) => {
 
 });
 
-
+// Change of registration data
 app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
 
     const { name } = request.body;
@@ -166,6 +167,7 @@ app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
 });
 
 
+// Search Customer
 app.get("/account", verifyIfExistsAccountCPF, (request, response) =>{
 
     const { customer } = request;
@@ -188,7 +190,7 @@ app.delete("/account", verifyIfExistsAccountCPF, (request, response) => {
 
 });
 
-
+// look up the current value in the customer's account 
 app.get("/balance", verifyIfExistsAccountCPF, (request, response) =>{
 
     const { customer } = request
@@ -200,4 +202,4 @@ app.get("/balance", verifyIfExistsAccountCPF, (request, response) =>{
 });
 
 
-app.listen(3333);
+app.listen(3333); // Socket WebServer https://localhosto:3333
