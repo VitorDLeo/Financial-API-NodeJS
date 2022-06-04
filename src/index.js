@@ -4,7 +4,6 @@ const express = require("express"); // Import Express
 const { v4: uuidv4 } = require("uuid"); // Create a unique user ID
 
 const app = express(); // Inserting the Express inside the "app" variable
-
 app.use(express.json());
 
 
@@ -21,6 +20,7 @@ const customers = [];
     statement []
 
 */
+
 
 // Midleware
 // It has the function of checking if the customer's CPF is already registered
@@ -40,6 +40,7 @@ function verifyIfExistsAccountCPF(request, response, next){
 
 };
 
+
 // Function Get Balance
 // It has the function of verifying which type of transaction in the statement was made,
 // and generating the current value of the user's account
@@ -54,7 +55,6 @@ function getBalance(statement){
     }, 0);
 
 };
-
 
 
 // Creation account
@@ -81,7 +81,6 @@ app.post("/account", (request, response) => {
 });
 
 
-
 // Search Account
 app.get("/statement", verifyIfExistsAccountCPF, (request, response) => {
     const { customer } = request; 
@@ -89,7 +88,6 @@ app.get("/statement", verifyIfExistsAccountCPF, (request, response) => {
     return response.json(customer.statement);
 
 });
-
 
 
 // Deposit
@@ -111,7 +109,6 @@ app.post("/deposit", verifyIfExistsAccountCPF, (request, response) => {
     return response.status(201).send();
 
 });
-
 
 
 // Withdraw
@@ -153,6 +150,7 @@ app.get("/statement/date", verifyIfExistsAccountCPF, (request, response) => {
     return response.json(statement);
 
 });
+
 
 // Change of registration data
 app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
