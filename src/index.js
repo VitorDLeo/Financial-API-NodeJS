@@ -1,14 +1,15 @@
-const { response } = require("express");
-const { request } = require("express");
-const express = require("express");
-const { v4: uuidv4 } = require("uuid");
+const { response } = require("express");// Import Express response
+const { request } = require("express"); // Import Express require
+const express = require("express"); // Import Express
+const { v4: uuidv4 } = require("uuid"); // Create a unique user ID
 
-const app = express();
+const app = express(); // Inserting the Express inside the "app" variable
 
 app.use(express.json());
 
 
 // Creation account
+// Customer parameters and fields
 const customers = [];
 /*
 
@@ -16,12 +17,13 @@ const customers = [];
 
     CPF - String
     Name - String
-    ID - uuid
+    ID - uuid (Generated via UUID)
     statement []
 
 */
 
 // Midleware
+// It has the function of checking if the customer's CPF is already registered
 function verifyIfExistsAccountCPF(request, response, next){
      
     const { cpf } = request.headers;
@@ -39,13 +41,15 @@ function verifyIfExistsAccountCPF(request, response, next){
 };
 
 // Function Get Balance
+// It has the function of verifying which type of transaction in the statement was made,
+// and generating the current value of the user's account
 function getBalance(statement){
 
     const balance =  statement.reduce((acc, operation) => {
         if (operation.type === "credit"){
-            return acc + operation.amount;
+            return acc + operation.amount; // If a credit operation has been carried out, it adds the amount to the account
         } else {
-            return acc - operation.amount;
+            return acc - operation.amount; // If a debit operation has been made, it removes the amount from the account
         }
     }, 0);
 
