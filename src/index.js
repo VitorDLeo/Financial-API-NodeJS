@@ -161,6 +161,7 @@ app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
 
 });
 
+
 app.get("/account", verifyIfExistsAccountCPF, (request, response) =>{
 
     const { customer } = request;
@@ -168,6 +169,7 @@ app.get("/account", verifyIfExistsAccountCPF, (request, response) =>{
     return response.json(customer);
 
 });
+
 
 // Delete Account
 app.delete("/account", verifyIfExistsAccountCPF, (request, response) => {

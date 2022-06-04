@@ -10,7 +10,7 @@
 ### [] It must be possible to search for the customer's bank statement by date
 ### [] It should be possible to update customer account data
 ### [] It must be possible to get customer account data
-### [ ] It must be possible to delete an account
+### [] It must be possible to delete an account
 <br>
 <hr>
 
