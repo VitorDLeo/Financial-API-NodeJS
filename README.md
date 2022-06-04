@@ -1,6 +1,7 @@
 # Financial-API-NodeJS
 
 ## Requirements
+
 <br>
 
 ### [] It must be possible to create an account
@@ -11,10 +12,12 @@
 ### [] It should be possible to update customer account data
 ### [] It must be possible to get customer account data
 ### [] It must be possible to delete an account
+
 <br>
 <hr>
 
 ## Business rules
+
 <br>
 
 ### [] It should not be possible to register an account with an existing CPF
